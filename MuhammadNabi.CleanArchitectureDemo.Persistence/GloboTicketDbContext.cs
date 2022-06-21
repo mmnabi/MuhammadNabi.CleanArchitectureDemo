@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using MuhammadNabi.CleanArchitectureDemo.Application.Contracts;
 using MuhammadNabi.CleanArchitectureDemo.Domain.Common;
 using MuhammadNabi.CleanArchitectureDemo.Domain.Entities;
 using System;
@@ -9,9 +10,21 @@ namespace MuhammadNabi.CleanArchitectureDemo.Persistence
 {
     public class GloboTicketDbContext : DbContext
     {
+        private readonly ILoggedInUserService _loggedInUserService;
         public GloboTicketDbContext(DbContextOptions<GloboTicketDbContext> options)
            : base(options)
         {
+        }
+
+        public GloboTicketDbContext(DbContextOptions<GloboTicketDbContext> options, ILoggedInUserService loggedInUserService)
+            : base(options)
+        {
+            if (loggedInUserService is null)
+            {
+                throw new ArgumentNullException(nameof(loggedInUserService));
+            }
+
+            _loggedInUserService = loggedInUserService;
         }
 
         public DbSet<Event> Events { get; set; }
@@ -193,9 +206,11 @@ namespace MuhammadNabi.CleanArchitectureDemo.Persistence
                 {
                     case EntityState.Added:
                         entry.Entity.CreatedDate = DateTime.Now;
+                        entry.Entity.CreatedBy = _loggedInUserService.UserId;
                         break;
                     case EntityState.Modified:
                         entry.Entity.LastModifiedDate = DateTime.Now;
+                        entry.Entity.LastModifiedBy = _loggedInUserService.UserId;
                         break;
                 }
             }
