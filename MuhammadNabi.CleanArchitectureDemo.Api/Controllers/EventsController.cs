@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using MuhammadNabi.CleanArchitectureDemo.Api.Utility;
 using MuhammadNabi.CleanArchitectureDemo.Application.Features.Events.Commands.CreateEvent;
 using MuhammadNabi.CleanArchitectureDemo.Application.Features.Events.Commands.DeleteEvent;
 using MuhammadNabi.CleanArchitectureDemo.Application.Features.Events.Commands.UpdateEvent;
@@ -69,7 +70,7 @@ namespace MuhammadNabi.CleanArchitectureDemo.Api.Controllers
         }
 
         [HttpGet("export", Name = "ExportEvents")]
-        //[FileResultContentType("text/csv")]
+        [FileResultContentType("text/csv")]
         public async Task<FileResult> ExportEvents()
         {
             var fileDto = await _mediator.Send(new GetEventsExportQuery());
