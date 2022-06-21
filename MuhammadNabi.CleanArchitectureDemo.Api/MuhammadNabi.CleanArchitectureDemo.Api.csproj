@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>net5.0</TargetFramework>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\MuhammadNabi.CleanArchitectureDemo.Application\MuhammadNabi.CleanArchitectureDemo.Application.csproj" />
+		<ProjectReference Include="..\MuhammadNabi.CleanArchitectureDemo.Infrastructure\MuhammadNabi.CleanArchitectureDemo.Infrastructure.csproj" />
+		<ProjectReference Include="..\MuhammadNabi.CleanArchitectureDemo.Persistence\MuhammadNabi.CleanArchitectureDemo.Persistence.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.17">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="MediatR" Version="10.0.1" />
+	</ItemGroup>
+
+</Project>
