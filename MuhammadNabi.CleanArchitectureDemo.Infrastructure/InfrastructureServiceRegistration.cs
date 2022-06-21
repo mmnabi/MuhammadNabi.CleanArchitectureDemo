@@ -2,6 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using MuhammadNabi.CleanArchitectureDemo.Application.Contracts.Infrastructure;
 using MuhammadNabi.CleanArchitectureDemo.Application.Models.Mail;
+using MuhammadNabi.CleanArchitectureDemo.Infrastructure.FileExport;
 using MuhammadNabi.CleanArchitectureDemo.Infrastructure.Mail;
 using System;
 
@@ -14,6 +15,7 @@ namespace MuhammadNabi.CleanArchitectureDemo.Infrastructure
             services.Configure<EmailSettings>(configuration.GetSection("EmailSettings"));
 
             services.AddTransient<IEmailService, EmailService>();
+            services.AddTransient<ICsvExporter, CsvExporter>();
 
             return services;
         }
