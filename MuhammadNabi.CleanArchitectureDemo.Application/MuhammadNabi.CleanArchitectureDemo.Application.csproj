@@ -15,4 +15,8 @@
 		<ProjectReference Include="..\MuhammadNabi.CleanArchitectureDemo.Domain\MuhammadNabi.CleanArchitectureDemo.Domain.csproj" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="Features\Orders\Commands\" />
+	</ItemGroup>
+
 </Project>

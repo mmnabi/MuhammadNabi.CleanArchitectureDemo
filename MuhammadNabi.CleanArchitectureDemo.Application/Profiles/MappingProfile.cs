@@ -6,6 +6,7 @@ using MuhammadNabi.CleanArchitectureDemo.Application.Features.Events.Commands.Cr
 using MuhammadNabi.CleanArchitectureDemo.Application.Features.Events.Commands.UpdateEvent;
 using MuhammadNabi.CleanArchitectureDemo.Application.Features.Events.Queries.GetEventDetail;
 using MuhammadNabi.CleanArchitectureDemo.Application.Features.Events.Queries.GetEventList;
+using MuhammadNabi.CleanArchitectureDemo.Application.Features.Orders.Queries.GetOrdersForMonth;
 using MuhammadNabi.CleanArchitectureDemo.Domain.Entities;
 
 namespace MuhammadNabi.CleanArchitectureDemo.Application.Profiles
@@ -26,7 +27,7 @@ namespace MuhammadNabi.CleanArchitectureDemo.Application.Profiles
             CreateMap<Category, CreateCategoryCommand>();
             CreateMap<Category, CreateCategoryDto>();
 
-            //CreateMap<Order, OrdersForMonthDto>();
+            CreateMap<Order, OrdersForMonthDto>();
         }
     }
 }
