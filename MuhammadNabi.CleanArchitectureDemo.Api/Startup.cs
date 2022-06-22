@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using MuhammadNabi.CleanArchitectureDemo.Api.Middleware;
 using MuhammadNabi.CleanArchitectureDemo.Api.Utility;
 using MuhammadNabi.CleanArchitectureDemo.Application;
 using MuhammadNabi.CleanArchitectureDemo.Infrastructure;
@@ -68,6 +69,8 @@ namespace MuhammadNabi.CleanArchitectureDemo.Api
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "GloboTicket Ticket Management API");
             });
+
+            app.UseCustomExceptionHandler();
 
             app.UseCors("Open");
 
