@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MuhammadNabi.CleanArchitectureDemo.Application.Features.Categories.Commands.CreateCategory;
@@ -20,6 +21,7 @@ namespace MuhammadNabi.CleanArchitectureDemo.Api.Controllers
             _mediator = mediator;
         }
 
+        [Authorize]
         [HttpGet("all", Name = "GetAllCategories")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<ActionResult<List<CategoryListViewModel>>> GetAllCategories()

@@ -6,6 +6,7 @@
 
 	<ItemGroup>
 		<ProjectReference Include="..\MuhammadNabi.CleanArchitectureDemo.Application\MuhammadNabi.CleanArchitectureDemo.Application.csproj" />
+		<ProjectReference Include="..\MuhammadNabi.CleanArchitectureDemo.Identity\MuhammadNabi.CleanArchitectureDemo.Identity.csproj" />
 		<ProjectReference Include="..\MuhammadNabi.CleanArchitectureDemo.Infrastructure\MuhammadNabi.CleanArchitectureDemo.Infrastructure.csproj" />
 		<ProjectReference Include="..\MuhammadNabi.CleanArchitectureDemo.Persistence\MuhammadNabi.CleanArchitectureDemo.Persistence.csproj" />
 	</ItemGroup>

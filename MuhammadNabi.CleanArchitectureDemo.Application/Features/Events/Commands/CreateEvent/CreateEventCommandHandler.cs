@@ -52,7 +52,7 @@ namespace MuhammadNabi.CleanArchitectureDemo.Application.Features.Events.Command
             }
             catch (Exception ex)
             {
-                this shouldn't stop the API from doing else so this can be logged
+                //this shouldn't stop the API from doing else so this can be logged
                 _logger.LogError($"Mailing about event {@event.EventId} failed due to an error with the mail service: {ex.Message}");
             }
 
